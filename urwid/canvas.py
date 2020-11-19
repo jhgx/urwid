@@ -145,9 +145,9 @@ class CanvasCache(object):
         cls.cleanups += 1 # collect stats
 
         w = cls._refs.get(ref, None)
-        del cls._refs[ref]
         if not w:
             return
+        del cls._refs[ref]
         widget, wcls, size, focus = w
         sizes = cls._widgets.get(widget, None)
         if not sizes:
